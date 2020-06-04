@@ -12,13 +12,14 @@ const ContactForm = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form data-testid='imHere' onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
             placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
+            id="firstName"
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
